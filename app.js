@@ -33,3 +33,21 @@ for (let i = 0; i < amigos.length; i++) {
     lista.appendChild(li);
   }
 }
+
+function sortearAmigo(){
+  // verficiar que la lista de amigos no este vacia
+  if (amigos.length === 0) {
+    alert("No hay amigos para sortear.");
+    return;
+  }
+
+  // generar el numero aleatorio
+  let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+  // buscar al amigo sorteado
+  let amigoSorteado = amigos[indiceAleatorio];
+
+  // mostrar el amigo secreto
+  document.getElementById("resultado").innerHTML = 
+    "El amigo sorteado es: <strong>" + amigoSorteado + "</strong>";
+}
