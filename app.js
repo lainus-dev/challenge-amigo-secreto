@@ -10,12 +10,26 @@ if(nuevoAmigo==""){
     return;
 }
 
-//agregamos a la matriz
+//agregamos el amigo a la matriz
 amigos.push(nuevoAmigo);
- alert("Agregado: " + nuevoAmigo);
 
 //limpiamos la caja de texto
 document.getElementById('amigo').value = ""; 
 
+mostrarLista();
+}
 
+function mostrarLista(){
+//creamos la etiqueta    
+let lista = document.getElementById("listaAmigos");
+
+//borrar lista inexistente
+lista.innerHTML = "";
+
+//armar el array de amigos
+for (let i = 0; i < amigos.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = amigos[i];
+    lista.appendChild(li);
+  }
 }
